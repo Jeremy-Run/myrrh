@@ -2,7 +2,7 @@
 <strong>
 <samp>
 
-[English](https://github.com/Jeremy-Run/myrrh/README.md) | [中文版](https://github.com/Jeremy-Run/myrrh/README_CN.md)
+[English](https://github.com/Jeremy-Run/myrrh/blob/main/README.md) | [中文版](https://github.com/Jeremy-Run/myrrh/blob/main/README_CN.md)
 
 </samp>
 </strong>
@@ -10,7 +10,6 @@
 
 ## myrrh是什么？
 myrrh是一个轻量级规则引擎
-
 
 
 ## 如何使用它?
@@ -44,8 +43,6 @@ go run main.go
 ```
 
 如果你想调试它，你可以跳到[config](config/config.go)文件并修改`SimulationActivity`。
-
-
 
 😝点个star支持一下~
 

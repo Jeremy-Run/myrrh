@@ -2,7 +2,7 @@
 <strong>
 <samp>
 
-[English](https://github.com/Jeremy-Run/myrrh/README.md) | [中文版](https://github.com/Jeremy-Run/myrrh/README_CN.md)
+[English](https://github.com/Jeremy-Run/myrrh/blob/main/README.md) | [中文版](https://github.com/Jeremy-Run/myrrh/blob/main/README_CN.md)
 
 </samp>
 </strong>
@@ -10,8 +10,6 @@
 
 # What is myrrh?
 myrrh is a lightweight rules engine
-
-
 
 ## How to use it?
 
@@ -44,8 +42,6 @@ Then you can see the execution results：
 ```
 
 If you want to debug it, you can go to the [config](config/config.go) file and modify the `SimulationActivity`.
-
-
 
 😝Please click on star~
 
