@@ -1,6 +1,7 @@
 package schedule
 
 import (
+	"fmt"
 	"myrrh/business"
 	"myrrh/calculation"
 )
@@ -68,6 +69,8 @@ func ExpressionEvaluation(root *Expression) bool {
 				business.Eval(expr.Element.Feature),
 				expr.Element.Value,
 			)
+			fmt.Printf(">>> [user.%s() %s %d] execute result is: %t \n",
+				expr.Element.Feature, expr.Element.Relation, expr.Element.Value, expr.Result)
 			rs = append(rs, expr.Result)
 		}
 
