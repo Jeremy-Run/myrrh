@@ -8,26 +8,26 @@
 </strong>
 </div>
 
-# What is myrrh?
-myrrh is a lightweight rules engine
+## myrrh是什么？
+myrrh是一个轻量级规则引擎
 
 
 
-## How to use it?
+## 如何使用它?
 
- First, you must ensure that you have a golang running environment, and then download the code locally
+首先，你必须确保您有一个golang的运行环境，然后把代码下载到本地
 
 ```bash
 git clone https://github.com/Jeremy-Run/myrrh.git
 ```
 
-Then execute the following code in the home directory of this project：
+然后在本项目的主目录下执行以下代码:
 
 ```bash
 go run main.go
 ```
 
-Then you can see the execution results：
+这样你就可以看到执行结果:
 
 ```bash
 >>> Start executing requirement......
@@ -43,11 +43,11 @@ Then you can see the execution results：
 >>> End of requirement execution......
 ```
 
-If you want to debug it, you can go to the [config](config/config.go) file and modify the `SimulationActivity`.
+如果你想调试它，你可以跳到[config](config/config.go)文件并修改`SimulationActivity`。
 
 
 
-😝Please click on star~
+😝点个star支持一下~
 
-The code will be updated......
+代码还会持续更新哦......
 
