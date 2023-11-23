@@ -7,3 +7,9 @@ type User struct {
 func (u *User) LoginTimes() int {
 	return 5
 }
+
+func NewSgpUser() User {
+	return User{
+		Region: "SGP",
+	}
+}
