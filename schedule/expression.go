@@ -18,7 +18,7 @@ type Expression struct {
 	Result  bool
 }
 
-func Evaluation(root *Expression) bool {
+func ExpressionEvaluation(root *Expression) bool {
 	if root == nil {
 		return false
 	}
