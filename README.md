@@ -8,8 +8,11 @@
 </strong>
 </div>
 
-# What is myrrh?
+## What is myrrh?
 myrrh is a lightweight rules engine
+
+## Detailed explanation(chinese)
+[document](https://zhuanlan.zhihu.com/p/668588745)
 
 ## How to use it?
 
