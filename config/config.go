@@ -89,32 +89,24 @@ var SimulationActivity = `
                         "exprs":[
                             {
                                 "element":{
-
+                                    "feature":"FollowTimes",
+                                    "value":8,
+                                    "relation":">="
                                 },
-                                "logic":"||",
+                                "logic":"",
                                 "exprs":[
-                                    {
-                                        "element":{
-                                            "feature":"FollowTimes",
-                                            "value":8,
-                                            "relation":">="
-                                        },
-                                        "logic":"",
-                                        "exprs":[
 
-                                        ]
-                                    },
-                                    {
-                                        "element":{
-                                            "feature":"InvitationTimes",
-                                            "value":2,
-                                            "relation":">="
-                                        },
-                                        "logic":"",
-                                        "exprs":[
+                                ]
+                            },
+                            {
+                                "element":{
+                                    "feature":"InvitationTimes",
+                                    "value":2,
+                                    "relation":">="
+                                },
+                                "logic":"",
+                                "exprs":[
 
-                                        ]
-                                    }
                                 ]
                             }
                         ]

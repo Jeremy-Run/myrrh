@@ -46,5 +46,9 @@ func (s *ItemStack) Pop() Item {
 }
 
 func (s *ItemStack) Empty() bool {
-	return len(s.items) == 0
+	return s.Count() == 0
+}
+
+func (s *ItemStack) Count() int {
+	return len(s.items)
 }
