@@ -7,6 +7,14 @@ func ExplainRelation(op string) func(l, r int) bool {
 		return c.GreaterThanOrEqual
 	case "<=":
 		return c.LessThanOrEqual
+	case ">":
+		return c.GreaterThan
+	case "<":
+		return c.LessThan
+	case "==":
+		return c.Equal
+	case "!=":
+		return c.NotEqual
 	}
 	return nil
 }
