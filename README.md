@@ -11,8 +11,8 @@
 ## What is myrrh?
 myrrh is a lightweight rules engine
 
-## Detailed explanation(chinese)
-[document](https://zhuanlan.zhihu.com/p/668588745)
+## Doc(chinese)
+[Document](https://zhuanlan.zhihu.com/p/668588745)
 
 ## How to use it?
 
@@ -32,6 +32,7 @@ Then you can see the execution results：
 
 ```bash
 >>> Start executing requirement......
+>>> Simplify Expression: (((user.LoginTimes() >= 5) && (user.OrderTimes() >= 1) && (user.CommentTimes() >= 1)) || ((user.BrowseTimes() >= 15) && (user.PostTimes() >= 3) && ((user.FollowTimes() >= 8) || (user.InvitationTimes() >= 2)))) 
 >>> [user.FollowTimes() >= 8] execute result is: true 
 >>> [user.InvitationTimes() >= 2] execute result is: true 
 >>> [user.BrowseTimes() >= 15] execute result is: true 
@@ -39,7 +40,7 @@ Then you can see the execution results：
 >>> [user.LoginTimes() >= 5] execute result is: true 
 >>> [user.OrderTimes() >= 1] execute result is: true 
 >>> [user.CommentTimes() >= 1] execute result is: true 
->>> Congrats! You have completed the activity and received 10% Off Coupon reward 
+>>> Congrats! You have completed the activity and received Ten percent off coupon reward 
 >>> The requirement execute result is: true 
 >>> End of requirement execution......
 ```

@@ -12,7 +12,7 @@
 myrrh是一个轻量级规则引擎
 
 
-## 详细的解说
+## 项目解说
 [文档](https://zhuanlan.zhihu.com/p/668588745)
 
 ## 如何使用它?
@@ -33,6 +33,7 @@ go run main.go
 
 ```bash
 >>> Start executing requirement......
+>>> Simplify Expression: (((user.LoginTimes() >= 5) && (user.OrderTimes() >= 1) && (user.CommentTimes() >= 1)) || ((user.BrowseTimes() >= 15) && (user.PostTimes() >= 3) && ((user.FollowTimes() >= 8) || (user.InvitationTimes() >= 2)))) 
 >>> [user.FollowTimes() >= 8] execute result is: true 
 >>> [user.InvitationTimes() >= 2] execute result is: true 
 >>> [user.BrowseTimes() >= 15] execute result is: true 
@@ -40,7 +41,7 @@ go run main.go
 >>> [user.LoginTimes() >= 5] execute result is: true 
 >>> [user.OrderTimes() >= 1] execute result is: true 
 >>> [user.CommentTimes() >= 1] execute result is: true 
->>> Congrats! You have completed the activity and received 10% Off Coupon reward 
+>>> Congrats! You have completed the activity and received Ten percent off coupon reward 
 >>> The requirement execute result is: true 
 >>> End of requirement execution......
 ```
