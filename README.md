@@ -31,8 +31,41 @@ go run main.go
 Then you can see the execution results：
 
 ```bash
->>> Start executing requirement......
->>> Simplify Expression: (((user.LoginTimes() >= 5) && (user.OrderTimes() >= 1) && (user.CommentTimes() >= 1)) || ((user.BrowseTimes() >= 15) && (user.PostTimes() >= 3) && ((user.FollowTimes() >= 8) || (user.InvitationTimes() >= 2)))) 
+>>> Start......
+>>> Simple Expression: (user.LoginTimes() >= 5) 
+>>> [user.LoginTimes() >= 5] execute result is: true 
+>>> Congrats! You have completed the activity and received ten percent off coupon reward 
+>>> The requirement execute result is: true 
+>>> End......
+```
+
+If you want to debug it, you can go to the [config](config/config.go) file and modify the `CaseActivity`.
+
+😝Please click on star~
+
+## Other Case
+
+```bash
+go run main.go --num=2
+```
+
+```bash
+>>> Start......
+>>> Simple Expression: ((user.FollowTimes() >= 9) || (user.InvitationTimes() >= 2)) 
+>>> [user.FollowTimes() >= 9] execute result is: false 
+>>> [user.InvitationTimes() >= 2] execute result is: true 
+>>> Congrats! You have completed the activity and received ten percent off coupon reward 
+>>> The requirement execute result is: true 
+>>> End......
+```
+
+```bash
+go run main.go --num=3
+```
+
+```bash
+>>> Start......
+>>> Simple Expression: (((user.LoginTimes() >= 5) && (user.OrderTimes() >= 1) && (user.CommentTimes() >= 1)) || ((user.BrowseTimes() >= 15) && (user.PostTimes() >= 3) && ((user.FollowTimes() >= 8) || (user.InvitationTimes() >= 2)))) 
 >>> [user.FollowTimes() >= 8] execute result is: true 
 >>> [user.InvitationTimes() >= 2] execute result is: true 
 >>> [user.BrowseTimes() >= 15] execute result is: true 
@@ -40,14 +73,7 @@ Then you can see the execution results：
 >>> [user.LoginTimes() >= 5] execute result is: true 
 >>> [user.OrderTimes() >= 1] execute result is: true 
 >>> [user.CommentTimes() >= 1] execute result is: true 
->>> Congrats! You have completed the activity and received Ten percent off coupon reward 
+>>> Congrats! You have completed the activity and received ten percent off coupon reward 
 >>> The requirement execute result is: true 
->>> End of requirement execution......
+>>> End......
 ```
-
-If you want to debug it, you can go to the [config](config/config.go) file and modify the `SimulationActivity`.
-
-😝Please click on star~
-
-The code will be updated......
-

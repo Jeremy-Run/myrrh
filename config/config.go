@@ -2,7 +2,9 @@ package config
 
 import "fmt"
 
-var SimulationActivity = fmt.Sprintf(BaseActivity, SimulationExpr)
+var CaseActivity1 = fmt.Sprintf(BaseActivity, CaseExpr1)
+var CaseActivity2 = fmt.Sprintf(BaseActivity, CaseExpr2)
+var CaseActivity3 = fmt.Sprintf(BaseActivity, CaseExpr3)
 
 var BaseActivity = `
 {
@@ -11,11 +13,58 @@ var BaseActivity = `
     "region":"SGP",
     "completionLimit":"OnceDuringActivity",
     "expr": %s,
-    "action":"Ten percent off coupon"
+    "action":"ten percent off coupon"
 }
 `
 
-var SimulationExpr = `
+var CaseExpr1 = `
+{
+    "element":{
+        "feature":"LoginTimes",
+        "value":5,
+        "relation":">="
+    },
+    "logic":"",
+    "exprs":[
+
+    ]
+}
+`
+
+var CaseExpr2 = `
+{
+    "element":{
+
+    },
+    "logic":"||",
+    "exprs":[
+        {
+            "element":{
+                "feature":"FollowTimes",
+                "value":9,
+                "relation":">="
+            },
+            "logic":"",
+            "exprs":[
+
+            ]
+        },
+        {
+            "element":{
+                "feature":"InvitationTimes",
+                "value":2,
+                "relation":">="
+            },
+            "logic":"",
+            "exprs":[
+
+            ]
+        }
+    ]
+}
+`
+
+var CaseExpr3 = `
 {
     "element":{
 

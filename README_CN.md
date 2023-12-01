@@ -32,8 +32,41 @@ go run main.go
 这样你就可以看到执行结果:
 
 ```bash
->>> Start executing requirement......
->>> Simplify Expression: (((user.LoginTimes() >= 5) && (user.OrderTimes() >= 1) && (user.CommentTimes() >= 1)) || ((user.BrowseTimes() >= 15) && (user.PostTimes() >= 3) && ((user.FollowTimes() >= 8) || (user.InvitationTimes() >= 2)))) 
+>>> Start......
+>>> Simple Expression: (user.LoginTimes() >= 5) 
+>>> [user.LoginTimes() >= 5] execute result is: true 
+>>> Congrats! You have completed the activity and received ten percent off coupon reward 
+>>> The requirement execute result is: true 
+>>> End......
+```
+
+如果你想调试它，你可以跳到[config](config/config.go)文件并修改`CaseActivity`。
+
+😝点个star支持一下~
+
+## 其他案例
+
+```bash
+go run main.go --num=2
+```
+
+```bash
+>>> Start......
+>>> Simple Expression: ((user.FollowTimes() >= 9) || (user.InvitationTimes() >= 2)) 
+>>> [user.FollowTimes() >= 9] execute result is: false 
+>>> [user.InvitationTimes() >= 2] execute result is: true 
+>>> Congrats! You have completed the activity and received ten percent off coupon reward 
+>>> The requirement execute result is: true 
+>>> End......
+```
+
+```bash
+go run main.go --num=3
+```
+
+```bash
+>>> Start......
+>>> Simple Expression: (((user.LoginTimes() >= 5) && (user.OrderTimes() >= 1) && (user.CommentTimes() >= 1)) || ((user.BrowseTimes() >= 15) && (user.PostTimes() >= 3) && ((user.FollowTimes() >= 8) || (user.InvitationTimes() >= 2)))) 
 >>> [user.FollowTimes() >= 8] execute result is: true 
 >>> [user.InvitationTimes() >= 2] execute result is: true 
 >>> [user.BrowseTimes() >= 15] execute result is: true 
@@ -41,14 +74,7 @@ go run main.go
 >>> [user.LoginTimes() >= 5] execute result is: true 
 >>> [user.OrderTimes() >= 1] execute result is: true 
 >>> [user.CommentTimes() >= 1] execute result is: true 
->>> Congrats! You have completed the activity and received Ten percent off coupon reward 
+>>> Congrats! You have completed the activity and received ten percent off coupon reward 
 >>> The requirement execute result is: true 
->>> End of requirement execution......
+>>> End......
 ```
-
-如果你想调试它，你可以跳到[config](config/config.go)文件并修改`SimulationActivity`。
-
-😝点个star支持一下~
-
-代码还会持续更新哦......
-

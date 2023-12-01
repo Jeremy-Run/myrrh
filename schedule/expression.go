@@ -23,17 +23,22 @@ func ExpressionEvaluation(root *Expression) bool {
 	if root == nil {
 		return false
 	}
+
+	// If the tree only one node, we can caculate result directly.
 	if root.Logic == "" {
 		fc := calculation.ExplainRelation(root.Element.Relation)
 		if fc == nil {
 			return false
 		}
-		return fc(
-			business.Eval(root.Element.Feature),
-			root.Element.Value,
-		)
+
+		root.Result = fc(business.Eval(root.Element.Feature), root.Element.Value)
+		fmt.Printf(">>> [user.%s() %s %d] execute result is: %t \n",
+			root.Element.Feature, root.Element.Relation, root.Element.Value, root.Result)
+		return root.Result
 	}
 
+	// If the tree have many nodes, we need to caculate all child node results.
+	// Trought child node results, we can get the root result.
 	stack := NewStack()
 	queue := []*Expression{root}
 
@@ -44,6 +49,8 @@ func ExpressionEvaluation(root *Expression) bool {
 			stack.Push(node)
 
 			for _, expr := range node.Exprs {
+				// Logic node include all element nodes,
+				// So we could filter all element nodes.
 				if expr.Logic == "" {
 					continue
 				}
@@ -55,10 +62,11 @@ func ExpressionEvaluation(root *Expression) bool {
 	for !stack.Empty() {
 		cur := stack.Pop().(*Expression)
 
-		var rs []bool
+		// Caculate all child node results.
+		var childResults []bool
 		for _, expr := range cur.Exprs {
 			if expr.Logic != "" {
-				rs = append(rs, expr.Result)
+				childResults = append(childResults, expr.Result)
 				continue
 			}
 			fc := calculation.ExplainRelation(expr.Element.Relation)
@@ -71,14 +79,15 @@ func ExpressionEvaluation(root *Expression) bool {
 			)
 			fmt.Printf(">>> [user.%s() %s %d] execute result is: %t \n",
 				expr.Element.Feature, expr.Element.Relation, expr.Element.Value, expr.Result)
-			rs = append(rs, expr.Result)
+			childResults = append(childResults, expr.Result)
 		}
 
+		// Judge child node results by logic, and it is the result of current logic node.
 		fc := calculation.ExplainLogic(cur.Logic)
 		if fc == nil {
 			return false
 		}
-		cur.Result = fc(rs...)
+		cur.Result = fc(childResults...)
 	}
 	return root.Result
 }
@@ -90,7 +99,7 @@ type ExpressionDescription struct {
 	Desc    string
 }
 
-func SimplifyExpression(root *ExpressionDescription) string {
+func SimpleExpression(root *ExpressionDescription) string {
 	if root == nil {
 		return ""
 	}
@@ -102,7 +111,6 @@ func SimplifyExpression(root *ExpressionDescription) string {
 			node := queue[0]
 			queue = queue[1:]
 			stack.Push(node)
-
 			for _, expr := range node.Exprs {
 				if expr.Logic == "" {
 					continue
