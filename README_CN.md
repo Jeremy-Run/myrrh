@@ -17,7 +17,7 @@ myrrh是一个轻量级规则引擎
 
 ## 如何使用它?
 
-首先，你必须确保您有一个golang的运行环境，然后把代码下载到本地
+首先，你必须确保你有一个golang的运行环境，然后把代码下载到本地
 
 ```bash
 git clone https://github.com/Jeremy-Run/myrrh.git
@@ -40,7 +40,7 @@ go run main.go
 >>> End......
 ```
 
-如果你想调试它，你可以跳到[config](config/config.go)文件并修改`CaseActivity`。
+如果你想调试它，你可以跳到[config](config/config.go)文件并修改`CaseActivity`中相关的内容。
 
 😝点个star支持一下~
 
