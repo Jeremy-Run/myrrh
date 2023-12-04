@@ -2,33 +2,34 @@
 <strong>
 <samp>
 
-[English](https://github.com/Jeremy-Run/myrrh/blob/main/README.md) | [中文版](https://github.com/Jeremy-Run/myrrh/blob/main/README_CN.md)
+[中文版](https://github.com/Jeremy-Run/myrrh/blob/main/README_CN.md) | [English](https://github.com/Jeremy-Run/myrrh/blob/main/README.md)
 
 </samp>
 </strong>
 </div>
 
-## What is myrrh?
-myrrh is a lightweight rules engine
+## myrrh是什么？
+myrrh是一个轻量级规则引擎
 
-## Doc(chinese)
-[Document](https://zhuanlan.zhihu.com/p/668588745)
 
-## How to use it?
+## 项目解说
+[文档](https://zhuanlan.zhihu.com/p/668588745)
 
- First, you must ensure that you have a golang running environment, and then download the code locally
+## 如何使用它?
+
+首先，你必须确保你有一个golang的运行环境，然后把代码下载到本地
 
 ```bash
 git clone https://github.com/Jeremy-Run/myrrh.git
 ```
 
-Then execute the following code in the home directory of this project：
+然后在本项目的主目录下执行以下代码:
 
 ```bash
-go run main.go
+make main
 ```
 
-Then you can see the execution results：
+这样你就可以看到执行结果:
 
 ```bash
 >>> Start......
@@ -39,14 +40,14 @@ Then you can see the execution results：
 >>> End......
 ```
 
-If you want to debug it, you can go to the [config](config/config.go) file and modify the `CaseActivity`.
+如果你想调试它，你可以跳到[config](config/config.go)文件并修改`CaseActivity`中相关的内容。
 
-😝Please click on star~
+😝点个star支持一下~
 
-## Other Case
+## 其他案例
 
 ```bash
-go run main.go --num=2
+make 2
 ```
 
 ```bash
@@ -60,7 +61,7 @@ go run main.go --num=2
 ```
 
 ```bash
-go run main.go --num=3
+make 3
 ```
 
 ```bash
