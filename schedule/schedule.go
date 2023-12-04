@@ -2,7 +2,7 @@ package schedule
 
 import (
 	"myrrh/business"
-	"time"
+	"myrrh/filter"
 )
 
 type Requirement struct {
@@ -15,23 +15,14 @@ type Requirement struct {
 }
 
 func (r *Requirement) Execute() bool {
-	now := time.Now().UnixMilli()
-	if now < r.StartTimestamp || now > r.EndTimestamp {
-		return false
+	sp := filter.SifterParams{
+		StartTimestamp:  r.StartTimestamp,
+		EndTimestamp:    r.EndTimestamp,
+		Region:          r.Region,
+		CompletionLimit: r.CompletionLimit,
 	}
-
-	user := business.NewSgpUser()
-	if r.Region != user.Region {
-		return false
-	}
-
-	limit := 0
-	switch r.CompletionLimit {
-	case "OnceDuringActivity":
-		limit = 1
-	}
-	activity := business.Activity{}
-	if activity.FinishTimes() >= limit {
+	isPass := filter.ExecuteSifter(sp)
+	if !isPass {
 		return false
 	}
 
