@@ -2,7 +2,7 @@
 <strong>
 <samp>
 
-[中文版](https://github.com/Jeremy-Run/myrrh/blob/main/README.md) | [English](https://github.com/Jeremy-Run/myrrh/blob/main/README_US.md)
+[中文版](https://github.com/Jeremy-Run/myrrh/blob/main/README.md) | [English](https://github.com/Jeremy-Run/myrrh/blob/main/README_EN.md)
 
 </samp>
 </strong>
